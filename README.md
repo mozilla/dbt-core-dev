@@ -68,7 +68,7 @@ dbt_sandbox:
       location: US
       method: oauth
       priority: interactive
-      project: "{{ env_var('NONPROD_PROJECT_ID') }}"
+      project: "{{ env_var('SANDBOX_GCP_PROJECT_ID') }}"
       threads: 4
       type: bigquery
   target: dev
