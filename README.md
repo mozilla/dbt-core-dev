@@ -17,8 +17,6 @@ Mozilla does not currently have a production-ready dbt Core implementation and i
 
 ### Local development environment setup
 
-#### Fork this repo
-
 Fork the repo and open in your preferred IDE
 
 Note: if you'd like to contribute to the project (add shareable macros, column descriptions, etc. follow instructions in the [Contributing Guide](CONTRIBUTING.md))
