@@ -62,7 +62,7 @@ nano ~/.dbt/profiles.yml
 dbt_sandbox:
   outputs:
     dev:
-      dataset: ads_derived
+      dataset: dataset_name # a default dataset in case one is not specified
       job_execution_timeout_seconds: 300
       job_retries: 1
       location: US
