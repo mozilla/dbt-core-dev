@@ -1,0 +1,24 @@
+name: 'dbt_sandbox'
+version: '1.0.0'
+profile: 'dbt_sandbox'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_sandbox:
+    +materialized: table
+    ads_derived:
+
+# Optional: shared descriptions
+vars:
+  submission_date: 'Client-side date in Firefox for when the indicated engagement occurred.'
