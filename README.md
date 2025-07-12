@@ -74,4 +74,12 @@ dbt_sandbox:
   target: dev
 ```
 
+#### Create sources.yaml
+
+This allows for referencing data sources without typing out the full table location
+
+```bash
+cp sources_example.yaml dbt_sandbox/models/sources.yaml
+```
+
 See the dbt sandbox [README.md](/dbt_sandbox/README.md) for using dbt-core for testing and development
