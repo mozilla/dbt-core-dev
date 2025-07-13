@@ -1,10 +1,10 @@
 # dbt Core Development (using a sandbox)
 
-This code repository is meant to be forked and used as a template for data practitioners to use dbt-core for local development and testing of models prior to deploying them to production.
-
-Use [BigQuery ETL](https://github.com/mozilla/bigquery-etl/) for scheduling on Airflow.
+This code repository is meant to be forked and used as a template for data practitioners to use dbt-core for local development and testing of data models prior to deploying them to production.
 
 It is set up to work with BigQuery and assumes users have GCP access with BigQuery permissions and can authenticate locally.
+
+Use [BigQuery ETL](https://github.com/mozilla/bigquery-etl/) for Airflow scheduling and production deployment.
 
 Mozilla does not currently have a production-ready dbt Core implementation and it is not on the roadmap. Some of our data practitioners find it productive to use dbt to deploy models for development and testing. This allows for easy facilitation of that.
 
@@ -56,7 +56,7 @@ Note: add the above line to your shell configuration to avoid setting it each ti
 nano ~/.dbt/profiles.yml
 ```
 
-- add this to `profiles.yaml`
+- add this to `profiles.yml`
 
 ```yaml
 dbt_sandbox:
@@ -76,10 +76,10 @@ dbt_sandbox:
 
 #### Create sources.yaml
 
-This allows for referencing data sources without typing out the full table location
+This allows for referencing data sources(outside of dbt models) without typing out the full table location. We use a copy as to not overwrite sources when syncing the fork.
 
 ```bash
 cp sources_example.yaml dbt_sandbox/models/sources.yaml
 ```
 
-See the dbt sandbox [README.md](/dbt_sandbox/README.md) for using dbt-core for testing and development
+See the dbt sandbox [README.md](/dbt_sandbox/README.md) for using dbt-core for testing and development.
