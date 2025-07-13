@@ -1,0 +1,31 @@
+# Example schema
+version: 2
+models:
+  - name: test_newtab_interactions_hourly_v1
+    description: >
+      'add a model description'
+    columns:
+      - name: submission_date
+        description: Client-side date in Firefox for when the indicated engagement occurred.
+        data_type: DATE
+        tests:
+          - not_null
+        config:
+          meta: {}
+          tags: []
+      - name: tile_id
+        description: A unique identifier used to identify content on Newtab (also used as an ad ID)
+        data_type: INT64
+        config:
+          meta: {}
+          tags: []
+      - name: impression_count
+        description: A sum of impressions by tile_id
+        config:
+          meta: {}
+          tags: []
+      - name: click_count
+        description: A sum of clicks by tile_id
+        config:
+          meta: {}
+          tags: []

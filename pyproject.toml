@@ -7,13 +7,17 @@ readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.13"
+python = ">=3.10,<3.13"
 dbt-bigquery = "^1.10"
 dbt-osmosis = "^1.1.17"
-
-
-[tool.poetry.group.dev.dependencies]
+grpcio = ">=1.49.1,<2.0.0"
+pyyaml = "^6.0.2"
+streamlit = "<1.25"
 sqlfluff = "^3.4.1"
+feedparser = "^6.0.11"
+pydantic = "<2"
+streamlit-elements-fluence = "^0.1.4"
+altair = "<5"
 
 [build-system]
 requires = ["poetry-core"]

@@ -16,7 +16,16 @@ clean-targets:
 
 models:
   dbt_sandbox:
+    +on_schema_change: "append_new_columns"
     +materialized: table
+    +dbt-osmosis: "{model}.yml"
+    +persist_docs:
+        relation: true
+        columns: true
+
+query-comment:
+  job-label: true
+  append: true
 
 # Optional: shared descriptions
 vars:
