@@ -1,6 +1,8 @@
-# dbt Core ETL Development (using a sandbox)
+# dbt Core Development (using a sandbox)
 
 This code repository is meant to be forked and used as a template for data practitioners to use dbt-core for local development and testing of models prior to deploying them to production.
+
+Use [BigQuery ETL](https://github.com/mozilla/bigquery-etl/) for scheduling on Airflow.
 
 It is set up to work with BigQuery and assumes users have GCP access with BigQuery permissions and can authenticate locally.
 
