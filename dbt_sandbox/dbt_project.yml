@@ -1,0 +1,32 @@
+name: 'dbt_sandbox'
+version: '1.0.0'
+profile: 'dbt_sandbox'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_sandbox:
+    +on_schema_change: "append_new_columns"
+    +materialized: table
+    +dbt-osmosis: "{model}.yml"
+    +persist_docs:
+        relation: true
+        columns: true
+
+query-comment:
+  job-label: true
+  append: true
+
+# Optional: shared descriptions
+vars:
+  submission_date: 'Client-side date in Firefox for when the indicated engagement occurred.'

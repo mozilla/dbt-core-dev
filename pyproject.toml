@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "dbt-core-dev"
+version = "0.1.0"
+description = "dbt core development and testing"
+authors = ["cbeck <cbeck@mozilla.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+dbt-bigquery = "^1.10"
+dbt-osmosis = "^1.1.17"
+grpcio = ">=1.49.1,<2.0.0"
+pyyaml = "^6.0.2"
+streamlit = "<1.25"
+sqlfluff = "^3.4.1"
+feedparser = "^6.0.11"
+pydantic = "<2"
+streamlit-elements-fluence = "^0.1.4"
+altair = "<5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# sqlfluff configuration
+
+[tool.sqlfluff.core]
+templater = "jinja"
+sql_file_exts = ".sql,.sql.j2"
+
+[tool.sqlfluff.indentation]
+indented_joins = false
+indented_using_on = true
+template_blocks_indent = false
+
+[tool.sqlfluff.templater]
+unwrap_wrapped_queries = true
+
+# [tool.sqlfluff.templater.jinja]
+# apply_dbt_builtins = true
+
+# For rule specific configuration, use dots between the names exactly
+# as you would in .sqlfluff. In the background, SQLFluff will unpack the
+# configuration paths accordingly.
+[tool.sqlfluff.rules.capitalisation.keywords]
+capitalisation_policy = "upper"

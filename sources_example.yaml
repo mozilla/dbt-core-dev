@@ -1,0 +1,7 @@
+sources:
+  - name: telemetry_derived # how the dataset is referenced
+    description: Firefox Telemetry derived dataset
+    database: moz-fx-data-shared-prod
+    schema: telemetry_derived
+    tables:
+      - name: newtab_interactions_hourly_v1
